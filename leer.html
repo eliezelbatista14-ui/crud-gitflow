@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Lista de Tareas</h1>
+
+<ul id="lista"></ul>
+
+<br>
+
+<a href="index.html">Volver al menú</a>
+
+<script>
+
+let tareas = JSON.parse(localStorage.getItem("tareas"));
+
+let lista = document.getElementById("lista");
+
+if(tareas == null || tareas.length == 0){
+
+    lista.innerHTML = "<li>No hay tareas registradas.</li>";
+
+}else{
+
+    for(let i=0; i<tareas.length; i++){
+
+        lista.innerHTML += "<li>" + tareas[i] + "</li>";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
